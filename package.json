@@ -1,6 +1,6 @@
 {
-  "name": "genai-phone",
-  "version": "1.1.0",
+  "name": "voxe",
+  "version": "1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "start": "node app.js"
   },
   "keywords": [],
-  "author": "Charlie Weems",
-  "license": "MIT",
+  "author": "Sanchay",
+  "license": "ABCD",
   "dependencies": {
     "@deepgram/sdk": "^3.3.4",
     "colors": "^1.4.0",

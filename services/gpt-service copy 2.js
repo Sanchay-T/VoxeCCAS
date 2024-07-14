@@ -2,6 +2,7 @@ require('colors');
 const EventEmitter = require('events');
 const OpenAI = require('openai');
 const tools = require('../functions/function-manifest');
+s
 
 // Import all functions included in function manifest
 // Note: the function name and file name must be the same
@@ -18,16 +19,12 @@ class GptService extends EventEmitter {
     this.userContext = [
       { 'role': 'system', 'content': 'You are a customer care representative for a business. You are empathetic, patient, and knowledgeable. Your primary goal is to assist customers with their inquiries and problems efficiently. Ensure the customer feels heard and understood. Keep your responses clear and concise. Ask clarifying questions if a user request is ambiguous. Do not make assumptions about the user\'s needs or issues. Use polite language and avoid technical jargon unless the customer indicates they are familiar with it. Include a \'•\' symbol every 5 to 10 words at natural pauses where your response can be split for text to speech.' },
       { 'role': 'assistant', 'content': 'Hello! How can I assist you with your concern today?' },
-    ];
+    ],
     this.partialResponseIndex = 0;
   }
 
-  // Load document and add to context
-  loadDocument(documentName, instruction) {
-    const documentData = readDocument(documentName, instruction);
-    this.userContext.push({ 'role': 'system', 'content': documentData.content });
-  }
-
+  // Add the callSid to the chat context in case
+  // ChatGPT decides to transfer the call.
   setCallSid (callSid) {
     this.userContext.push({ 'role': 'system', 'content': `callSid: ${callSid}` });
   }

@@ -12,7 +12,6 @@ function readDocument(documentName, instruction) {
 
   return {
     content: documentContent,
-    instruction: instruction
   };
 }
 

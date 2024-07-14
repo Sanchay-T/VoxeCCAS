@@ -6,7 +6,7 @@ const ExpressWs = require('express-ws');
 const axios = require('axios');
 const twilio = require('twilio');
 
-const { GptService } = require('./services/gpt-service'); // Ensure this is the updated GptService
+const { GptService } = require('./services/gpt-service');
 const { GroqService } = require('./services/groq-service');
 const { StreamService } = require('./services/stream-service');
 const { TranscriptionService } = require('./services/transcription-service');
